@@ -5,7 +5,7 @@ import ProgressBar from "./progressbar";
 function App() {
     return (
         <div className="App">
-            <ProgressBar percentage={66} value={500} maxValue={1000} />
+            <ProgressBar percentage={-50} value={-500} maxValue={1000} />
         </div>
     );
 }

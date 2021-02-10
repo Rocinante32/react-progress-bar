@@ -23,13 +23,18 @@ export default function ProgressBar(props) {
             };
         }
     } else {
-        calcPercentage = (props.value / props.maxValue) * 100 + "%";
+        calcPercentage = (props.value / props.maxValue) * 100;
         console.log("percent calc: ", calcPercentage);
-        // if (calcPercentage > 100) {
-        // }
-        progressWidth = {
-            width: calcPercentage,
-        };
+        if (calcPercentage > 100) {
+            error = true;
+            console.log("Error: percentage entered is greater than 100");
+        } else if (calcPercentage < 0) {
+            console.log("Error: you entered a negative percentage");
+        } else {
+            progressWidth = {
+                width: calcPercentage + "%",
+            };
+        }
     }
 
     console.log("props: ", props, "percent after set: ", calcPercentage);
